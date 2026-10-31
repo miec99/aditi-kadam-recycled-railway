@@ -136,6 +136,18 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: 8px; }
 .btn:hover { transform: translateY(-1px); }
 .mail { font-family: var(--mono); font-size: .95rem; user-select: all; }
 
+.seasons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.season { border: 2px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 6px; align-content: start; }
+.season b { font-family: var(--display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; line-height: 1.05; }
+.season p { color: var(--muted); font-size: .97rem; }
+.season.done { border-color: var(--coach); }
+.season.next { border-style: dashed; border-color: var(--track); }
+@media (max-width: 520px) { .seasons { grid-template-columns: minmax(0, 1fr); } }
+
+.about .wrap { padding-block: 40px 8px; display: grid; gap: 10px; }
+.about p { max-width: 64ch; }
+.about a { color: var(--coach); font-weight: 700; }
+
 /* Timetable */
 .tt-wrap { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: .95rem; }
@@ -169,7 +181,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <header class="mast">
   <div class="wrap">
     <div class="board">
-      <p class="eyebrow">Recycled art for young children &middot; Est. <span class="fill">[Year]</span></p>
+      <p class="eyebrow">Recycled art for young children &middot; Est. 2026</p>
       <h1>The Recycled Railway</h1>
       <p class="sub">Old plastic bottles and used train tickets, turned into a train by kindergarteners.</p>
     </div>
@@ -179,7 +191,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </figure>
     <div class="byline">
       <span>Started by Aditi Kadam</span>
-      <span>First workshop: <span class="fill">[School name], [City]</span>, October 2026</span>
+      <span>Mumbai &middot; Summer 2026, returning Summer 2027</span>
     </div>
   </div>
 </header>
@@ -289,15 +301,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <div class="ticket">
         <div class="ticket-main">
-          <div class="ticket-top"><span>The Recycled Railway</span><span>Single journey</span></div>
+          <div class="ticket-top"><span>The Recycled Railway</span><span>Season ticket &middot; Summer 2026</span></div>
           <div class="route"><b>Waste</b><i aria-hidden="true">&rarr;</i><b>Imagination</b></div>
           <dl>
             <div><dt>Class</dt><dd>Kindergarten</dd></div>
             <div><dt>Ages</dt><dd>4 and 5</dd></div>
-            <div><dt>Sessions</dt><dd>2</dd></div>
-            <div><dt>Children</dt><dd><span class="fill">[20]</span></dd></div>
-            <div><dt>Built</dt><dd>1 engine, 4 coaches</dd></div>
-            <div><dt>Date</dt><dd>Oct 2026</dd></div>
+            <div><dt>Sessions per school</dt><dd>2</dd></div>
+            <div><dt>Materials</dt><dd>Bottles, tickets, chart paper</dd></div>
+            <div><dt>City</dt><dd>Mumbai</dd></div>
+            <div><dt>Next season</dt><dd>Summer 2027</dd></div>
           </dl>
         </div>
         <div class="stub">Admit one school</div>
@@ -308,8 +320,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="schools" id="schools">
     <div class="wrap">
       <div>
-        <p class="eyebrow">For schools</p>
+        <p class="eyebrow">For schools in Mumbai &middot; now booking Summer 2027</p>
         <h2>Bring the Recycled Railway to your school</h2>
+      </div>
+      <div class="seasons">
+        <div class="season done"><span class="eyebrow">Summer 2026</span><b>First season</b><p>Two-session workshops with kindergarten classes, each class building its own recycled train.</p></div>
+        <div class="season next"><span class="eyebrow">Summer 2027</span><b>Second season</b><p>Taking the workshop to more schools across Mumbai. Invitations are open now.</p></div>
       </div>
       <ol class="steps">
         <li><b>Get in touch</b><p>Write to me with your school, the class and a few dates that suit you.</p></li>
@@ -318,29 +334,24 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <li><b>Build</b><p>Session two: we build the train together, and it stays in your classroom.</p></li>
       </ol>
       <div class="cta">
-        <a class="btn" href="#" data-note="Replace # with the Google Form link">Invite us to your school</a>
-        <span>or email <span class="mail fill">[email address]</span></span>
+        <a class="btn" href="mailto:aditikadam917@gmail.com?subject=The%20Recycled%20Railway%3A%20Summer%202027%20workshop">Book a Summer 2027 workshop</a>
+        <span>or email <span class="mail">aditikadam917@gmail.com</span></span>
       </div>
 
-      <div class="tt-wrap">
-        <table>
-          <caption>Stations so far</caption>
-          <thead>
-            <tr><th scope="col">School</th><th scope="col">City</th><th scope="col">Month</th><th scope="col">Class</th><th scope="col">Children</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><span class="fill">[School name]</span></td><td><span class="fill">[City]</span></td><td>Oct 2026</td><td>Kindergarten</td><td class="num"><span class="fill">[20]</span></td></tr>
-            <tr class="next"><td colspan="5">Next station: your school?</td></tr>
-          </tbody>
-        </table>
-      </div>
+    </div>
+  </section>
+  <section class="about" aria-label="About Aditi">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <p>Aditi Kadam started The Recycled Railway after her internship with Indian Railways. She is a commerce student with a love for economics and art.</p>
+      <p>See more of her work at <a href="https://aditikadam.com/" target="_blank" rel="noopener">aditikadam.com</a></p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>The Recycled Railway &middot; started by Aditi Kadam, <span class="fill">[Year]</span></span>
+    <span>The Recycled Railway &middot; started by Aditi Kadam, 2026</span>
     <span>All workshops are free for schools.</span>
   </div>
 </footer>
